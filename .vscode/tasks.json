@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "command": "",
+    "args": [],
+    "tasks": [
+        {
+            "label": "mkdir",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/C",
+                "if not exist .\\build\\debug mkdir .\\build\\debug"
+            ],
+            "presentation": {
+                "close": true,
+            },
+            "hide": true,
+            "isBackground": true
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "odin build ./source/main_desktop -debug -out:build/debug/game_debug.exe",
+            "group": "build",
+            "presentation": {
+                "clear": true,
+            },
+            "dependsOn": [
+                "mkdir"
+            ]
+        },
+        {
+            "label": "Vet",
+            "type": "shell",
+            "command": "odin build ./source/main_desktop -debug -out:build/debug/game_debug.exe -vet",
+            "group": "build",
+            "presentation": {
+                "clear": true,
+            },
+            "dependsOn": [
+                "mkdir"
+            ]
+        },
+    ]
+}

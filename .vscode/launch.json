@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cppvsdbg",
+            "request": "launch",
+            "preLaunchTask": "Build",
+            "name": "Debug",
+            "program": "${workspaceFolder}/build/debug/game_debug.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "presentation": {
+                "group": "run",
+            },
+        }
+    ]
+}
